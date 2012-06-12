@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="plugin" group="captcha">
+	<name>plg_captcha_securimage</name>
+	<version>2.5.0</version>
+	<creationDate>December 2011</creationDate>
+	<author>Joomla! Project</author>
+	<authorEmail>admin@joomla.org</authorEmail>
+	<authorUrl>www.joomla.org</authorUrl>
+	<copyright>Copyright (C) 2005 - 2012 Open Source Matters. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<description></description>
+	<files>
+		<filename plugin="securimage">securimage.php</filename>
+        <filename>securimage_class.php</filename>
+        <filename>securimage_show.php</filename>
+        <folder>securimage</folder>
+	</files>
+	<config>
+	<fields name="params">
+	</fields>
+	</config>
+</extension>
