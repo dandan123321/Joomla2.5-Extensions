@@ -14,9 +14,13 @@ var MooMarquee = new Class({
         this.speed = this.options.speed;
         
         var _this = this;
-        this.imagesReady(function(){
-            _this.bind();
-        });
+        if(Browser.ie) {
+                _this.bind();
+        } else {
+            this.imagesReady(function(){
+                _this.bind();
+            });
+        }
     },
         
     imagesReady: function(callback) {
