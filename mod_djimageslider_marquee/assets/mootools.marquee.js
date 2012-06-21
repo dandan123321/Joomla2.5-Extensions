@@ -13,6 +13,28 @@ var MooMarquee = new Class({
         this.direction = this.options.direction;
         this.speed = this.options.speed;
         
+        var _this = this;
+        this.imagesReady(function(){
+            _this.bind();
+        });
+    },
+        
+    imagesReady: function(callback) {
+        var container = this.element;
+        var imgNoReadyCount = container.getElements("img").length;
+        container.getElements("img").each(function(item, index){
+            var img = new Image();
+            img.src = item.src;
+            img.onload = function (){
+                imgNoReadyCount--;
+                if(imgNoReadyCount <= 0) {
+                    callback();
+                }
+            }
+        });
+    },
+
+    bind: function(){
         var that = this;
         var childWrapper = this.element.getElement(this.options.childWrapper);
         
