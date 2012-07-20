@@ -697,7 +697,7 @@ jQuery.iFisheye = {
     positionItems: function (el) {
         el.fisheyeCfg.items.each(function (nr) {
             this.style.width = el.fisheyeCfg.itemWidth + 'px';
-            this.style.left = el.fisheyeCfg.itemWidth * nr + 'px'
+            this.style.left = (el.fisheyeCfg.itemWidth + el.fisheyeCfg.space) * nr + 'px'
         })
     }
 };
