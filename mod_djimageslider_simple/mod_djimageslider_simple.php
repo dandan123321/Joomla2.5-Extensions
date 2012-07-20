@@ -14,7 +14,7 @@ JHTML::_('behavior.mootools');
 JHTML::_('behavior.mootools', true);
 $app = JFactory::getApplication();
 $document = JFactory::getDocument();
-$document->addScript('modules/mod_djimageslider_simple/assets/slideshow.js');
+$document->addScript('modules/mod_djimageslider_simple/assets/SlideShow.js');
 
 // taking the slides from the source
 if($params->get('slider_source')==1) {

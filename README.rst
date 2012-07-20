@@ -1,7 +1,7 @@
 mod_menu
 ========
 
-对joomla 2.5默认的mainmenu module进行模板扩展。扩展了dropdown与dock两种效果，使用时在module里选择对应layout即可实现效果。
+对joomla 2.5默认的mainmenu module进行模板扩展，直接COPY到modules/mod_menu即可。扩展了dropdown与dock两种效果，使用时在module里选择对应layout即可实现效果。
 
 dock menu效果使用了jquery interface实现，但由于interface的Fisheye不能设置间隔，所以对Fisheye进行了修改。
 
