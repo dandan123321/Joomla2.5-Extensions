@@ -1,3 +1,8 @@
+mod_djimageslider_simple
+========================
+
+基于djimageslider组件实现最简单的slideshow。使用前请先安装djimageslider
+
 mod_djimageslider_marquee
 =========================
 
