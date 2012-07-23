@@ -689,7 +689,7 @@ jQuery.iFisheye = {
         })
     },
     positionContainer: function (el, toAdd) {
-        if (el.fisheyeCfg.halign) if (el.fisheyeCfg.halign == 'center') el.fisheyeCfg.container.get(0).style.left = (el.offsetWidth - el.fisheyeCfg.itemWidth * el.fisheyeCfg.items.size()) / 2 - toAdd / 2 + 'px';
+        if (el.fisheyeCfg.halign) if (el.fisheyeCfg.halign == 'center') el.fisheyeCfg.container.get(0).style.left = (el.offsetWidth - (el.fisheyeCfg.itemWidth + el.fisheyeCfg.space) * el.fisheyeCfg.items.size()) / 2 - toAdd / 2 + 'px';
         else if (el.fisheyeCfg.halign == 'left') el.fisheyeCfg.container.get(0).style.left = -toAdd / el.fisheyeCfg.items.size() + 'px';
         else if (el.fisheyeCfg.halign == 'right') el.fisheyeCfg.container.get(0).style.left = (el.offsetWidth - el.fisheyeCfg.itemWidth * el.fisheyeCfg.items.size()) - toAdd / 2 + 'px';
         el.fisheyeCfg.container.get(0).style.width = el.fisheyeCfg.itemWidth * el.fisheyeCfg.items.size() + toAdd + 'px'
