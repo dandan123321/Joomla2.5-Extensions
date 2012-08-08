@@ -15,6 +15,11 @@ mod_djimageslider_marquee
 
 基于djimageslider组件实现的marquee效果。使用前请先安装djimageslider
 
+mod_djimageslider_cascade
+=========================
+
+叶式slideshow, 基于djimageslider组件
+
 plg_securimage
 ==============
 
