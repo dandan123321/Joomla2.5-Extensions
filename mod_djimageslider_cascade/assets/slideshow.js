@@ -68,7 +68,7 @@
             item.slideIndex = index;
             item.setStyle("position", "absolute");
             item.setStyle("left", "0px");
-            item.addEvent("mouseover", function () {
+            item.addEvent("click", function () {
                 if (_this.current != this.slideIndex) {
                     _this.current = this.slideIndex;
                     _this.moveSlides(true);
@@ -78,7 +78,7 @@
 
         if (this.options.nextButton) {
             this.options.nextButton.addEvent("click", function () {
-                if (_this.current < _this.slideCount) {
+                if (_this.current < _this.slideCount-1) {
                     _this.current++;
                     _this.moveSlides(true);
                 }

@@ -1,3 +1,4 @@
 ﻿.img-container {height:402px;}
 .djslider-container {overflow:hidden;}
-    .djslider-container .slide { background-color:#fff;}
+.djslider-container .slide { background-color:#fff;}
+.banner .img-container .slide:hover img {opacity: 1;}
