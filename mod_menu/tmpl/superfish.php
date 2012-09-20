@@ -8,22 +8,24 @@
 
 // No direct access.
 defined('_JEXEC') or die;
+
 $doc = JFactory::getDocument();
 $menuPath = '/modules/mod_menu/assets/';
-$doc->addScript(JURI::root().$menuPath.'MenuMatic_0.68.3.js');
-$doc->addStylesheet(JURI::root().$menuPath.'MenuMatic.css');
-
-// Note. It is important to remove spaces between elements.
+$loadJQuery = true;
+if($loadJQuery) {
+	$doc->addScript('http://ajax.microsoft.com/ajax/jquery/jquery-1.7.2.min.js');
+}
+$doc->addScript(JURI::root().$menuPath.'js/hoverIntent.js');
+$doc->addScript(JURI::root().$menuPath.'js/superfish.js');
+$doc->addStylesheet(JURI::root().$menuPath.'css/superfish.css');
 ?>
 
-<ul class="menu<?php echo $class_sfx;?>"<?php
+<ul class="menu<?php echo $class_sfx;?> sf-menu"<?php
 	$tag = '';
 	if ($params->get('tag_id')!=NULL) {
 		$tag = $params->get('tag_id').'';
 		echo ' id="'.$tag.'"';
-    } else {
-        echo 'id="dropdownMenu"';
-    }
+	}
 ?>>
 <?php
 foreach ($list as $i => &$item) :
@@ -64,11 +66,11 @@ foreach ($list as $i => &$item) :
 		case 'separator':
 		case 'url':
 		case 'component':
-			require JModuleHelper::getLayoutPath('mod_menu', 'default_'.$item->type);
+			require JModuleHelper::getLayoutPath('mod_menu', 'superfish_'.$item->type);
 			break;
 
 		default:
-			require JModuleHelper::getLayoutPath('mod_menu', 'default_url');
+			require JModuleHelper::getLayoutPath('mod_menu', 'superfish_url');
 			break;
 	endswitch;
 
@@ -87,6 +89,10 @@ foreach ($list as $i => &$item) :
 	}
 endforeach;
 ?></ul>
+
 <script type="text/javascript">
-var myMenu = new MenuMatic({ id:"<?php echo $params->get('tag_id')?$params->get('tag_id'):'dropdownMenu'; ?>", orientation:'vertical' });	
+jQuery(function(){
+	jQuery('ul.sf-menu').superfish();
+});
+
 </script>
