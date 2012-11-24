@@ -42,37 +42,15 @@
  * @package Securimage
  *
  */
+define('_JEXEC', 1);
+define('DS', DIRECTORY_SEPARATOR);
 
-if (! defined ( '_JEXEC' )) {
-    define ( '_JEXEC', 1 );
-    define ( 'DS', DIRECTORY_SEPARATOR );
-    
-    if (file_exists ( dirname ( __FILE__ ) . '/../../../defines.php' )) {
-        include_once dirname ( __FILE__ ) . '/../../../defines.php';
-    }
-    
-    if (! defined ( '_JDEFINES' )) {
-        define ( 'JPATH_BASE', dirname ( __FILE__ ) . '/../../..' );
-        require_once JPATH_BASE . '/includes/defines.php';
-    }
-    
-    require_once JPATH_BASE . '/includes/framework.php';
-    
-    // Mark afterLoad in the profiler.
-    JDEBUG ? $_PROFILER->mark('afterLoad') : null;
-    
-    // Instantiate the application.
-    $app = JFactory::getApplication('site');
-    
-    // Initialise the application.
-    $app->initialise();
-    
-    // Mark afterIntialise in the profiler.
-    JDEBUG ? $_PROFILER->mark('afterInitialise') : null;
-    
-    // Route the application.
-    $app->route();
+if (!defined('_JDEFINES')) {
+    define('JPATH_BASE', dirname(__FILE__) . '/../../..');
+    require_once JPATH_BASE.'/includes/defines.php';
 }
+
+require_once JPATH_BASE.'/includes/framework.php';
 
 require_once dirname(__FILE__) . '/securimage_class.php';
 
@@ -97,8 +75,8 @@ $img = new JSecurimage();
 
 // see securimage.php for more options that can be set
 
-
-
+$img->image_height = 50;
+$img->image_width = (int)($img->image_height * 2.875);
 $img->show();  // outputs the image and content headers to the browser
 // alternate use: 
 // $img->show('/path/to/background_image.jpg');

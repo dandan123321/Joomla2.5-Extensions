@@ -49,10 +49,11 @@ class plgCaptchaSecurimage extends JPlugin
 	 */
 	public function onDisplay($name, $id, $class)
 	{
-      $url = JURI::base(true).'/plugins/captcha/securimage/securimage_show.php';
-      return sprintf('<img %s id="%s_image" src="%s" alt="CAPTCHA Image" />
-<input type="text" id="%s" name="%s" size="10" maxlength="6" />
-<a id="%s_link" href="#" onclick="document.getElementById(\'%s_image\').src = \'%s?\' + Math.random(); return false">[ Different Image ]</a>',$class ,$id, $url, $id, $name, $id, $id, $url);
+      $url = JURI::root().'plugins/captcha/securimage/securimage_show.php';
+      $html = sprintf('<img %s id="%s_image" src="%s" alt="CAPTCHA Image" onclick="this.src = \'%s?\' + Math.random(); return false" />',$class ,$id, $url, $url);
+      $html .= sprintf('<input type="text" id="%s" name="%s" size="10" maxlength="6" />', $id, $name);
+      $html .= sprintf('<a id="%s_link" href="#" onclick="document.getElementById(\'%s_image\').src = \'%s?\' + Math.random(); return false">[ Different Image ]</a>', $id, $id, $url);
+      return $html;
 	}
 
 	/**
