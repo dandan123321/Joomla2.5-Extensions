@@ -52,6 +52,12 @@ if (!defined('_JDEFINES')) {
 
 require_once JPATH_BASE.'/includes/framework.php';
 
+// Instantiate the application.
+$app = JFactory::getApplication('site');
+
+// Initialise the application.
+$app->initialise();
+
 require_once dirname(__FILE__) . '/securimage_class.php';
 
 $img = new JSecurimage();
